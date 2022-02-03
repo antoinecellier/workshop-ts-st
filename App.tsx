@@ -1,25 +1,21 @@
 import React from 'react';
-import {SafeAreaView, StatusBar, useColorScheme, View} from 'react-native';
+import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import List from './components/List';
+import {MessageListContextProvider} from './business/useMessageListContext';
+
+import Header from './components/Header';
+import Conversation from './screens/Conversation';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={{flex: 1}}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <View
-        style={{
-          backgroundColor: isDarkMode ? Colors.black : Colors.white,
-        }}>
-        <List />
-      </View>
+      <Header />
+      <MessageListContextProvider>
+        <Conversation />
+      </MessageListContextProvider>
     </SafeAreaView>
   );
 };
