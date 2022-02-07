@@ -3,7 +3,7 @@ import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
 import Config from 'react-native-config';
 
 import StorybookUI from './storybook';
-import {MessageListContextProvider} from './business/useMessageListContext';
+import {MessageListContextProvider} from './business/MessageListContext';
 
 import Header from './components/Header';
 import Conversation from './screens/Conversation';

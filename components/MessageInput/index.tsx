@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {StyleProp, ViewStyle} from 'react-native';
 import styled from 'styled-components/native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faPaperPlane} from '@fortawesome/free-solid-svg-icons';
@@ -36,17 +35,11 @@ const ButtonText = styled.Text`
   font-weight: bold;
 `;
 
-type MessageFormProps = {
-  onSend: (message: string) => void;
-  isButtonLabelDisplay?: boolean;
-  style?: StyleProp<ViewStyle>;
-};
-
 const MessageInput = ({
   onSend,
   style,
   isButtonLabelDisplay = true,
-}: MessageFormProps) => {
+}) => {
   const [message, onChangeMessage] = useState('');
   const onSendPress = () => {
     onSend(message);

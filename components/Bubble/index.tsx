@@ -1,31 +1,20 @@
 import React from 'react';
-import {StyleProp, ViewStyle} from 'react-native';
 import styled from 'styled-components/native';
 
 import * as styles from '../../styles';
 
-type BubbleType = {
-  primary?: boolean;
-  secondary?: boolean;
-  style?: StyleProp<ViewStyle>;
-};
-
-const Container = styled.View<BubbleType>`
+const Container = styled.View`
   padding: 12px;
   border-radius: 10px;
   background: ${({secondary}) =>
     secondary ? styles.SECONDARY_COLOR : styles.PRIMARY_COLOR};
 `;
 
-const Text = styled.Text<BubbleType>`
+const Text = styled.Text`
   color: ${({secondary}) => (secondary ? '#000' : '#fff')};
 `;
 
-type BubbleProps = {
-  content: string;
-} & BubbleType;
-
-const Bubble = ({content, secondary, primary, style}: BubbleProps) => {
+const Bubble = ({content, secondary, primary, style}) => {
   return (
     <Container primary={primary} secondary={secondary} style={style}>
       <Text primary={primary} secondary={secondary}>
