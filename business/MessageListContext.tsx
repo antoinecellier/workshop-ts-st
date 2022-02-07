@@ -5,16 +5,17 @@ const MessageListContext = createContext({
   state: {
     messages: [],
   },
-  addMessage: (state, message) => console.log('whoops'),
+  addMessage: () => console.log('whoops'),
 });
 
-export const MessageListContextProvider = ({
-  children,
-}) => {
+export const MessageListContextProvider = ({children}) => {
   const [state, setState] = useState({messages: []});
 
-  const addMessage = (state, message) => {
-    const newState = {...state, messages: [...state.messages, message]};
+  const addMessage = (previousState, message) => {
+    const newState = {
+      ...previousState,
+      messages: [...previousState.messages, message],
+    };
     setState(newState);
     setTimeout(() => {
       setState({

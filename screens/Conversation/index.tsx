@@ -52,7 +52,7 @@ const Conversation = () => {
             <Avatar imageSource={{uri: message.avatar}} />
             <BubbleStyled
               content={message.content}
-              secondary={!message.owner}
+              type={message.owner ? 'primary' : 'secondary'}
             />
           </MessageRow>
         ))}

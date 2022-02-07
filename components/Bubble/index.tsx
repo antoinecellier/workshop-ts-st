@@ -6,20 +6,18 @@ import * as styles from '../../styles';
 const Container = styled.View`
   padding: 12px;
   border-radius: 10px;
-  background: ${({secondary}) =>
-    secondary ? styles.SECONDARY_COLOR : styles.PRIMARY_COLOR};
+  background: ${({type}) =>
+    type === 'secondary' ? styles.SECONDARY_COLOR : styles.PRIMARY_COLOR};
 `;
 
 const Text = styled.Text`
-  color: ${({secondary}) => (secondary ? '#000' : '#fff')};
+  color: ${({type}) => (type === 'secondary' ? '#000' : '#fff')};
 `;
 
-const Bubble = ({content, secondary, primary, style}) => {
+const Bubble = ({content, type, style}) => {
   return (
-    <Container primary={primary} secondary={secondary} style={style}>
-      <Text primary={primary} secondary={secondary}>
-        {content}
-      </Text>
+    <Container type={type} style={style}>
+      <Text type={type}>{content}</Text>
     </Container>
   );
 };
