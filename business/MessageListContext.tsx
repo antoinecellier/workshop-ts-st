@@ -1,20 +1,44 @@
-import React, {useContext} from 'react';
+import React, {ReactNode, useContext} from 'react';
 import {createContext, useState} from 'react';
 
-const MessageListContext = createContext({
+export type Message = {
+  sentAt: Date;
+  content: string;
+  owner: boolean;
+  avatar: string;
+};
+
+type MessageListContextState = {messages: Message[]};
+
+type MessageListContextValue = {
+  state: MessageListContextState;
+  addMessage: (state: MessageListContextState, message: Message) => void;
+};
+
+const MessageListContext = createContext<MessageListContextValue>({
   state: {
     messages: [],
   },
-  addMessage: (state, message) => console.log('whoops'),
+  addMessage: () => console.log('whoops'),
 });
+
+type MessageListContextProviderProps = {
+  children: ReactNode;
+};
 
 export const MessageListContextProvider = ({
   children,
-}) => {
-  const [state, setState] = useState({messages: []});
+}: MessageListContextProviderProps) => {
+  const [state, setState] = useState<MessageListContextState>({messages: []});
 
-  const addMessage = (state, message) => {
-    const newState = {...state, messages: [...state.messages, message]};
+  const addMessage = (
+    previousState: MessageListContextState,
+    message: Message,
+  ) => {
+    const newState = {
+      ...previousState,
+      messages: [...previousState.messages, message],
+    };
     setState(newState);
     setTimeout(() => {
       setState({

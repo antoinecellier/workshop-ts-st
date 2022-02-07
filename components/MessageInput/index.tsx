@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {StyleProp, ViewStyle} from 'react-native';
 import styled from 'styled-components/native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faPaperPlane} from '@fortawesome/free-solid-svg-icons';
@@ -35,11 +36,21 @@ const ButtonText = styled.Text`
   font-weight: bold;
 `;
 
+const FontAwesomeIconStyled = styled(FontAwesomeIcon)`
+  margin-right: 5;
+`;
+
+type MessageInputProps = {
+  onSend: (message: string) => void;
+  style?: StyleProp<ViewStyle>;
+  isButtonLabelDisplay: boolean;
+};
+
 const MessageInput = ({
   onSend,
   style,
   isButtonLabelDisplay = true,
-}) => {
+}: MessageInputProps) => {
   const [message, onChangeMessage] = useState('');
   const onSendPress = () => {
     onSend(message);
@@ -53,11 +64,7 @@ const MessageInput = ({
         placeholder="Enter your message"
       />
       <TouchableOpacity onPress={onSendPress}>
-        <FontAwesomeIcon
-          icon={faPaperPlane}
-          color="#fff"
-          style={{marginRight: 5}}
-        />
+        <FontAwesomeIconStyled icon={faPaperPlane} color="#fff" />
         {isButtonLabelDisplay && <ButtonText>Send</ButtonText>}
       </TouchableOpacity>
     </Container>

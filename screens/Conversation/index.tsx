@@ -5,13 +5,16 @@ import {ScrollView} from 'react-native';
 import Bubble from '../../components/Bubble';
 import MessageInput from '../../components/MessageInput';
 import Avatar from '../../components/Avatar';
-import {useMessageListContext} from '../../business/MessageListContext';
+import {
+  useMessageListContext,
+  Message,
+} from '../../business/MessageListContext';
 
 const ContainerMessages = styled(ScrollView)`
   flex: 0.9;
 `;
 
-const MessageRow = styled.View`
+const MessageRow = styled.View<Pick<Message, 'owner'>>`
   flex-direction: ${({owner}) => (owner ? 'row-reverse' : 'row')};
   justify-content: flex-start;
   padding: 0 10px;
@@ -29,7 +32,7 @@ const MessageInputStyled = styled(MessageInput)`
 `;
 
 const Conversation = () => {
-  const tchatRef = useRef(null);
+  const tchatRef = useRef<ScrollView>(null);
   const {state, addMessage} = useMessageListContext();
 
   const onSend = (msg: string) => {
@@ -52,7 +55,7 @@ const Conversation = () => {
             <Avatar imageSource={{uri: message.avatar}} />
             <BubbleStyled
               content={message.content}
-              secondary={!message.owner}
+              type={message.owner ? 'primary' : 'secondary'}
             />
           </MessageRow>
         ))}
