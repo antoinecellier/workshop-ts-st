@@ -61,7 +61,7 @@ const Conversation = () => {
           </MessageRow>
         ))}
       </ContainerMessages>
-      <MessageInputStyled displayButtonLabel={false} onSend={onSend} />
+      <MessageInputStyled isButtonLabelDisplay={false} onSend={onSend} />
     </>
   );
 };

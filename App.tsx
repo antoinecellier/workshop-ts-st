@@ -1,6 +1,8 @@
 import React from 'react';
 import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
+import Config from 'react-native-config';
 
+import StorybookUI from './storybook';
 import {MessageListContextProvider} from './business/useMessageListContext';
 
 import Header from './components/Header';
@@ -20,4 +22,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Config.LOAD_STORYBOOK === 'true' ? StorybookUI : App;

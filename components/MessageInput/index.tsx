@@ -38,14 +38,14 @@ const ButtonText = styled.Text`
 
 type MessageFormProps = {
   onSend: (message: string) => void;
-  displayButtonLabel?: boolean;
+  isButtonLabelDisplay?: boolean;
   style?: StyleProp<ViewStyle>;
 };
 
 const MessageInput = ({
   onSend,
   style,
-  displayButtonLabel = true,
+  isButtonLabelDisplay = true,
 }: MessageFormProps) => {
   const [message, onChangeMessage] = useState('');
   const onSendPress = () => {
@@ -65,7 +65,7 @@ const MessageInput = ({
           color="#fff"
           style={{marginRight: 5}}
         />
-        {displayButtonLabel && <ButtonText>Send</ButtonText>}
+        {isButtonLabelDisplay && <ButtonText>Send</ButtonText>}
       </TouchableOpacity>
     </Container>
   );
