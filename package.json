@@ -9,7 +9,8 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "storybook": "start-storybook -p 7007",
-    "storybook-ios": "ENVFILE=.env.storybook yarn ios",
+    "storybook-mobile-ios": "ENVFILE=.env.storybook yarn ios",
+    "storybook-web-mobile-ios": "concurrently \"yarn storybook\" \"yarn storybook-mobile-ios\"",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
@@ -41,6 +42,7 @@
     "@typescript-eslint/parser": "^5.7.0",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.3",
+    "concurrently": "^7.0.0",
     "eslint": "^7.14.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
