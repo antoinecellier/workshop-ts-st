@@ -4,7 +4,7 @@ import styled from 'styled-components/native';
 
 import * as styles from '../../styles';
 
-type BubbleType = 'primary' | 'secondary';
+export type BubbleType = 'primary' | 'secondary';
 
 type BubbleProps = {
   content: string;

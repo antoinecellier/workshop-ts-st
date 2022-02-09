@@ -8,7 +8,7 @@ import {name as appName} from '../app.json';
 import './rn-addons';
 
 // enables knobs for all stories
-addDecorator(withKnobs);
+addDecorator(withKnobs({escapeHTML: false}));
 
 // import stories
 configure(() => {
