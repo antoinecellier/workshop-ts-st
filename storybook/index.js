@@ -11,6 +11,7 @@ import {CustomTheme} from '../theme';
 
 // enables knobs for all stories
 addDecorator(withKnobs({escapeHTML: false}));
+addDecorator(Story => <Story />);
 
 // import stories
 configure(() => {

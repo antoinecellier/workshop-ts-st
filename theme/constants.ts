@@ -14,10 +14,12 @@ export const spacing = {
   small: 8,
   medium: 16,
   large: 24,
+  xlarge: 30,
 };
 
 export const horizontalSpacing = {
   small: 14,
   medium: 16,
   large: 18,
+  xlarge: 24,
 };
