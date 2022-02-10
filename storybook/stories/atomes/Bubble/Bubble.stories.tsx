@@ -3,17 +3,18 @@ import React from 'react';
 import {storiesOf} from '@storybook/react-native';
 import {select, text} from '@storybook/addon-knobs';
 
-import Bubble, {BubbleType} from '../../../../components/Bubble';
+import Bubble from '../../../../components/Bubble';
 import CenterView from '../../layout/CenterView';
+import {ColorVariants} from '../../../../theme/constants';
 
 const message = "C'est pas faux";
 
-type bubbleTypeSelect = {
+type BubbleTypeSelect = {
   label: string;
-  options: Record<string, BubbleType>;
+  options: Record<ColorVariants, ColorVariants>;
 };
 
-const bubbleTypeSelect: bubbleTypeSelect = {
+const bubbleTypeSelect: BubbleTypeSelect = {
   label: 'Type',
   options: {
     primary: 'primary',
@@ -21,7 +22,7 @@ const bubbleTypeSelect: bubbleTypeSelect = {
   },
 };
 
-const getBubbleTypeSelect = (value: BubbleType) =>
+const getBubbleTypeSelect = (value: string) =>
   select(bubbleTypeSelect.label, bubbleTypeSelect.options, value);
 
 storiesOf('Atomes / Bubble', module)
