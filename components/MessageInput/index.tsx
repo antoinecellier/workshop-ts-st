@@ -4,8 +4,6 @@ import styled from 'styled-components/native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faPaperPlane} from '@fortawesome/free-solid-svg-icons';
 
-import * as styles from '../../styles';
-
 const Container = styled.View`
   flex: 1;
   flex-direction: row;
@@ -17,7 +15,7 @@ const Input = styled.TextInput`
   border: 1px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  border-color: ${styles.SECONDARY_COLOR};
+  border-color: ${({theme}) => theme.colors.primary};
 `;
 
 const TouchableOpacity = styled.TouchableOpacity`
@@ -28,7 +26,7 @@ const TouchableOpacity = styled.TouchableOpacity`
   padding: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: ${styles.PRIMARY_COLOR};
+  background-color: ${({theme}) => theme.colors.primary};
 `;
 
 const ButtonText = styled.Text`

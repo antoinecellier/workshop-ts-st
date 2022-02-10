@@ -7,18 +7,21 @@ import {MessageListContextProvider} from './business/MessageListContext';
 
 import Header from './components/Header';
 import Conversation from './screens/Conversation';
+import {CustomTheme} from './theme';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <Header />
-      <MessageListContextProvider>
-        <Conversation />
-      </MessageListContextProvider>
-    </SafeAreaView>
+    <CustomTheme>
+      <SafeAreaView style={{flex: 1}}>
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        <Header />
+        <MessageListContextProvider>
+          <Conversation />
+        </MessageListContextProvider>
+      </SafeAreaView>
+    </CustomTheme>
   );
 };
 

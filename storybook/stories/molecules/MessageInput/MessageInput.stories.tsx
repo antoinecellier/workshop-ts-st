@@ -16,12 +16,18 @@ const MessageInputStyled = styled(MessageInput)`
 
 storiesOf('Molecules / Message input', module)
   .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
-  .add('default', () => (
-    <MessageInputStyled
-      isButtonLabelDisplay={boolean('isButtonLabelDisplay', false)}
-      onSend={action('Send message')}
-    />
-  ))
+  .add(
+    'default',
+    () => (
+      <MessageInputStyled
+        isButtonLabelDisplay={boolean('isButtonLabelDisplay', false)}
+        onSend={action('Send message')}
+      />
+    ),
+    {
+      notes: 'Component used for sending messages',
+    },
+  )
   .add('with label', () => (
     <MessageInputStyled
       isButtonLabelDisplay={boolean('isButtonLabelDisplay', true)}
