@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-import * as styles from '../../styles';
+import {colors} from '../../theme/constants';
 
 const Container = styled.View`
   padding: 12px;
   border-radius: 10px;
   background: ${({type}) =>
-    type === 'secondary' ? styles.SECONDARY_COLOR : styles.PRIMARY_COLOR};
+    type === 'secondary' ? colors.secondary : colors.primary};
 `;
 
 const Text = styled.Text`
