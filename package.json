@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "yarn tsc && eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "storybook": "start-storybook -p 7007",
     "storybook-mobile-ios": "ENVFILE=.env.storybook yarn ios",
     "storybook-web-mobile-ios": "concurrently \"yarn storybook\" \"yarn storybook-mobile-ios\"",
