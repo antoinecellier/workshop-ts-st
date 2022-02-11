@@ -1,4 +1,10 @@
 ## Typescript
+Dans ce TP nous allons typer un ensemble de composants React Native utilisant `styled-component` ainsi que du code "métier".
+
+Pour tester si vous avez correctement typé votre code vous pouvez utiliser cette commande:
+```
+    yarn tsc-tp1 --watch
+```
 ### Typer la fonction `rudenessModeration`
 **business/index.ts**
 

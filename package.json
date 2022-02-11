@@ -8,6 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "tsc-tp1": "npx tsc --project tsconfig.tp1.json",
+    "tsc-tp2": "npx tsc --project tsconfig.json",
     "storybook": "start-storybook -p 7007",
     "storybook-mobile-ios": "ENVFILE=.env.storybook yarn ios",
     "storybook-web-mobile-ios": "concurrently \"yarn storybook\" \"yarn storybook-mobile-ios\"",

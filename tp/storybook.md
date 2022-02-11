@@ -1,4 +1,15 @@
 ## Storybook
+Dans ce TP nous allons mettre en place et typer les stories des composants de notre application.
+
+Pour tester si vous avez correctement typé votre code vous pouvez utiliser cette commande:
+```
+    yarn tsc-tp2 --watch
+```
+
+Pour lancer le serveur de dev Storybook et avoir un rendu dans un émulateur iOS vous pouvez utiliser cette commande:
+```
+  yarn storybook-web-mobile-ios
+```
 
 ### Ecrire des stories pour le composant MessageInput
 `storybook/stories/molecules/MessageInput/MessageInput.stories.tsx`
@@ -18,7 +29,7 @@ Pour au moins une des stories ajouter de la documentation grâce à `@storybook/
 
 Pour au moins une des stories ajouter la possibilité de logger une valeur dans Storybook quand la props `onSend` est appelé. Cela est possible avec `@storybook/addon-actions`: https://storybook.js.org/addons/@storybook/addon-actions
 
-Ecrire 2 stories différente:
+Ecrire 2 stories différentes:
 - Default: `<MessageInput isButtonLabelDisplay={false} />`
 - With label: `<MessageInput isButtonLabelDisplay />`
 
@@ -69,7 +80,7 @@ export const theme: DefaultTheme = {
 };
 ```
 
-Et enfin de le même fichier implémenter le provider du theme de l'application:
+Et enfin dans le même fichier implémenter le provider du theme de l'application:
 ```tsx
 type CustomThemeProps = {
   children: ReactNode;
@@ -82,7 +93,7 @@ export const CustomTheme = ({children}: CustomThemeProps) => (
 
 Il ne reste plus qu'à wrapper l'application avec le `CustomTheme` provider dans le fichier `App.tsx`.
 
-Vous avez maintenant accès à l'ensemble des valeurs du theme ainsi que son typage dans tout vos `styled-components`.
+Vous avez maintenant accès à l'ensemble des valeurs du theme ainsi que son typage dans tout les `styled-components` de l'application.
 
 ```tsx
 const Input = styled.TextInput`
