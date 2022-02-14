@@ -21,7 +21,7 @@ Typer les props du composant `MessageInput`.
 
 Pour la prop `style` vous pouvez utiliser les types `StyleProp` et `ViewStyle` de React Native:
 
-```js
+```ts
 import {StyleProp, ViewStyle} from 'react-native';
 ...
 type MessageFormProps = {
@@ -37,7 +37,7 @@ Wrapper `FontAwesomeIcon` dans un styled component pour éviter le style inline.
 
 Typer les props du composant `Bubble` ainsi que les `styled components` utilisés.
 
-N'oubliez que vous pouvez passer un type générique à vos `styled components`. 
+N'oubliez pas que vous pouvez passer un type générique à vos `styled components`. 
 
 ### Typer le Composant Avatar
 **components/Bubble/index.tsx**
@@ -45,7 +45,7 @@ N'oubliez que vous pouvez passer un type générique à vos `styled components`.
 Typer les props du composant `Avatar`.
 
 React Native met à disposition un type pour les images: `ImageSourcePropType`
-```js
+```ts
 import {ImageSourcePropType} from 'react-native';
 ```
 
@@ -81,6 +81,6 @@ Puis typer le composant `MessageListContextProvider` :
 **screens/Conversation/index.tsx**
 
 Typer le hook `useRef`.
-Typer les styled components si nécessaire.
+Typer les `styled components` si nécessaire.
 
 
