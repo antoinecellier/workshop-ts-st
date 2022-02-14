@@ -30,12 +30,16 @@ type MessageFormProps = {
 }
 ```
 
-Wrapper `FontAwesomeIcon` dans un styled component pour éviter le style inline.
+Wrapper `FontAwesomeIcon` dans un styled component pour éviter le style inline 
+`style={{marginRight: 5}}`.
 
 ### Typer le Composant Bubble
 **components/Avatar/index.tsx**
 
 Typer les props du composant `Bubble` ainsi que les `styled components` utilisés.
+
+La prop `type` peut seulement avoir deux valeurs possible: `primary` ou `secondary`.
+Vous avez à votre disposition le type `ColorVariant` (`theme/constants.ts`).
 
 N'oubliez pas que vous pouvez passer un type générique à vos `styled components`. 
 
@@ -64,7 +68,7 @@ type Message = {
 };
 ```
 
-Dans un premier typer la fonction `createContext` qui a la "definition type" suivante:
+Dans un premier temps typer la fonction `createContext` qui a la `definition type` suivante:
 ```ts
     function createContext<T>(
         defaultValue: T,
@@ -84,3 +88,4 @@ Typer le hook `useRef`.
 Typer les `styled components` si nécessaire.
 
 
+Lancer l'application avec la commande `yarn ios` pour vérifier que tout fonctionne correctement.

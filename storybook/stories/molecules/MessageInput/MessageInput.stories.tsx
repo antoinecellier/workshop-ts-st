@@ -1,7 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react-native';
 import {action} from '@storybook/addon-actions';
-import {boolean} from '@storybook/addon-knobs';
 
 import styled from 'styled-components/native';
 
