@@ -1,10 +1,11 @@
 import React from 'react';
 import {StyleProp, ViewStyle} from 'react-native';
-import styled, {DefaultTheme} from 'styled-components/native';
+import styled from 'styled-components/native';
+import {ColorVariants} from '../../theme/constants';
 
 type BubbleProps = {
   content: string;
-  type: keyof DefaultTheme['colors'];
+  type: ColorVariants;
   style?: StyleProp<ViewStyle>;
 };
 

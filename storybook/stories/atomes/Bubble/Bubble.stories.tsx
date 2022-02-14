@@ -22,8 +22,12 @@ const bubbleTypeSelect: BubbleTypeSelect = {
   },
 };
 
-const getBubbleTypeSelect = (value: string) =>
-  select(bubbleTypeSelect.label, bubbleTypeSelect.options, value);
+const getBubbleTypeSelect = (value: ColorVariants) =>
+  select<ColorVariants>(
+    bubbleTypeSelect.label,
+    bubbleTypeSelect.options,
+    value,
+  );
 
 storiesOf('Atomes / Bubble', module)
   .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
