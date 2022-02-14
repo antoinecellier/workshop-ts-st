@@ -35,7 +35,7 @@ const ButtonText = styled.Text`
 `;
 
 const FontAwesomeIconStyled = styled(FontAwesomeIcon)`
-  margin-right: 5;
+  margin-right: 5px;
 `;
 
 type MessageInputProps = {
