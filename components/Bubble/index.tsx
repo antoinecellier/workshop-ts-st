@@ -1,18 +1,20 @@
 import React from 'react';
 import {StyleProp, ViewStyle} from 'react-native';
-import styled, {DefaultTheme} from 'styled-components/native';
+import styled from 'styled-components/native';
+
+import {colors, ColorVariants} from '../../theme/constants';
 
 type BubbleProps = {
   content: string;
-  type: keyof DefaultTheme['colors'];
+  type: ColorVariants;
   style?: StyleProp<ViewStyle>;
 };
 
 const Container = styled.View<Pick<BubbleProps, 'type'>>`
   padding: 12px;
   border-radius: 10px;
-  background: ${({type, theme}) =>
-    type === 'secondary' ? theme.colors.secondary : theme.colors.primary};
+  background: ${({type}) =>
+    type === 'secondary' ? colors.secondary : colors.primary};
 `;
 
 const Text = styled.Text<Pick<BubbleProps, 'type'>>`

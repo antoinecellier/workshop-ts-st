@@ -1,7 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react-native';
 import {action} from '@storybook/addon-actions';
-import {boolean} from '@storybook/addon-knobs';
 
 import styled from 'styled-components/native';
 
@@ -16,21 +15,5 @@ const MessageInputStyled = styled(MessageInput)`
 
 storiesOf('Molecules / Message input', module)
   .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
-  .add(
-    'default',
-    () => (
-      <MessageInputStyled
-        isButtonLabelDisplay={boolean('isButtonLabelDisplay', false)}
-        onSend={action('Send message')}
-      />
-    ),
-    {
-      notes: 'Component used for sending messages',
-    },
-  )
-  .add('with label', () => (
-    <MessageInputStyled
-      isButtonLabelDisplay={boolean('isButtonLabelDisplay', true)}
-      onSend={action('Send message')}
-    />
-  ));
+  .add('default', () => 'TODO')
+  .add('with label', () => 'TODO');
