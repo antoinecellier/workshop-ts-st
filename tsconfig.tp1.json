@@ -9,12 +9,13 @@
     "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
-    "noImplicitAny": true,
     "target": "esnext",
+    "noImplicitAny": true,
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
   "exclude": [
+    "storybook",
     "node_modules/**",
     "babel.config.js",
     "metro.config.js",

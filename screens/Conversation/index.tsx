@@ -5,17 +5,13 @@ import {ScrollView} from 'react-native';
 import Bubble from '../../components/Bubble';
 import MessageInput from '../../components/MessageInput';
 import Avatar from '../../components/Avatar';
-import {useMessageListContext} from '../../business/useMessageListContext';
+import {useMessageListContext} from '../../business/MessageListContext';
 
 const ContainerMessages = styled(ScrollView)`
   flex: 0.9;
 `;
 
-type MessageRowType = {
-  owner: boolean;
-};
-
-const MessageRow = styled.View<MessageRowType>`
+const MessageRow = styled.View`
   flex-direction: ${({owner}) => (owner ? 'row-reverse' : 'row')};
   justify-content: flex-start;
   padding: 0 10px;
@@ -33,7 +29,7 @@ const MessageInputStyled = styled(MessageInput)`
 `;
 
 const Conversation = () => {
-  const tchatRef = useRef<ScrollView>(null);
+  const tchatRef = useRef(null);
   const {state, addMessage} = useMessageListContext();
 
   const onSend = (msg: string) => {
@@ -56,12 +52,12 @@ const Conversation = () => {
             <Avatar imageSource={{uri: message.avatar}} />
             <BubbleStyled
               content={message.content}
-              secondary={!message.owner}
+              type={message.owner ? 'primary' : 'secondary'}
             />
           </MessageRow>
         ))}
       </ContainerMessages>
-      <MessageInputStyled displayButtonLabel={false} onSend={onSend} />
+      <MessageInputStyled isButtonLabelDisplay={false} onSend={onSend} />
     </>
   );
 };
