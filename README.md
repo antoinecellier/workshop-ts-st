@@ -24,7 +24,7 @@ Pour lancer Storybook sur iOS ainsi qu'un serveur web permettant la navigation d
 ```
 
 Les TP sont disponibles dans le dossier `tp/`. 
-Les TP doivent être fait dans l'ordre. Le deuxième dépent du premier.
+Les TP doivent être fait dans l'ordre. Le deuxième dépend du premier.
 
 
 ## Programme de la journée
