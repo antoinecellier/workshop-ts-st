@@ -29,11 +29,16 @@ Les TP doivent être fait dans l'ordre. Le deuxième dépend du premier.
 ## Liens utiles
 
 [Typescript Cheatsheets](https://www.typescriptlang.org/cheatsheets)
+
 [React TypeScript Cheatsheets](https://react-typescript-cheatsheet.netlify.app/)
+
 [Theme with styled-components and Typescript](https://medium.com/rbi-tech/theme-with-styled-components-and-typescript-209244ec15a3)
 
+
 [Showcase Storybook](https://storybook.js.org/showcase)
+
 [Exemple d'un storybook utilisant React Native Web](https://react-native-sketchbook.vercel.app/?path=/story/animations-slideupview--light)
+
 [Storybook pour React Native (surveiller la release vers la v6.0)](https://github.com/storybookjs/react-native?ref=https://githubhelp.com)
 
 ## Programme de la journée
